@@ -1,4 +1,4 @@
-export class Story {
+module.exports = class Story {
     constructor(story_data) {
         this.variables = story_data.variables;
         this.start = story_data.start;
