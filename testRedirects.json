@@ -1,0 +1,75 @@
+{
+    "variables": {
+        "haveCar": true,
+        "carWorks": true
+    },
+
+    "start": "giveMeARide",
+
+    "nodes": {
+        "giveMeARide": {
+            "data": {
+                "text": "Hey, do you think you could give me a ride?",
+                "response_text": "Oh..."
+            },
+            "redirects": [
+                {
+                    "node_name": "yes",
+                    "conditions": [
+                        {
+                            "variable": "haveCar",
+                            "operator": "=",
+                            "value": true
+                        },
+                        {
+                            "variable": "carWorks",
+                            "operator": "=",
+                            "value": true
+                        }
+                    ]
+                },
+                {
+                    "node_name": "no_car",
+                    "conditions": [
+                        {
+                            "variable": "haveCar",
+                            "operator": "!=",
+                            "value": true
+                        }
+                    ]
+                },
+                {
+                    "node_name": "not_working",
+                    "conditions": [
+                        {
+                            "variable": "haveCar",
+                            "operator": "=",
+                            "value": true
+                        },
+                        {
+                            "variable": "carWorks",
+                            "operator": "!=",
+                            "value": true
+                        }
+                    ]
+                }
+            ] 
+        },
+        "yes": {
+            "data": {
+                "text": "Sure! Why not?"
+            }
+        },
+        "no_car": {
+            "data": {
+                "text": "Sorry, I don't have a car."
+            }
+        },
+        "not_working": {
+            "data": {
+                "text": "Sorry, my cars not working right now."
+            }
+        }
+
+    }
+}
