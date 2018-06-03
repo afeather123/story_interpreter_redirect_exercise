@@ -6,3 +6,4 @@ story_data = JSON.parse(story_data);
 const story = new Story(story_data);
 
 console.log(story.Start());
+

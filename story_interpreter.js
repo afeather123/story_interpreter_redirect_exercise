@@ -32,5 +32,6 @@ module.exports = class Story {
 
     Start() {
         // This function will call next node with the starting node
+        this.NextNode(this.start);
     }
 }
