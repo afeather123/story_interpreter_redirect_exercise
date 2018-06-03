@@ -16,3 +16,9 @@ Then you can run the test with
 ```
 node test.js
 ```
+
+or with
+
+```
+npm run test
+```
